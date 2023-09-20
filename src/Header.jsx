@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <nav className="flex justify-between items-center max-w-screen-2xl mx-6 md:mx-10 2xl:mx-auto py-4">
+    <nav className="flex justify-between items-center max-w-screen-2xl mx-6 md:mx-10 2xl:mx-auto py-4 mb-32">
       <a href="" className="font-bold text-3xl">
         TechHub
       </a>
@@ -29,12 +29,12 @@ const Header = () => {
         ))}
       </ul>
 
-      <button className="px-8 py-3 bg-slate-500 font-medium text-xl rounded-xl hover:bg-slate-600 hidden lg:block">
+      <button className="px-8 py-3 bg-slate-500 text-slate-200 font-medium text-xl rounded-xl hidden lg:block  border border-slate-500 hover:border-slate-800 ">
         Explore Now
       </button>
 
       <button
-        className="text-3xl border px-2 py-1 rounded-md lg:hidden"
+        className="text-3xl border border-slate-700 dark:border-slate-200 px-2 py-1 rounded-md lg:hidden"
         onClick={() => setNavOpen(!navOpen)}
       >
         {navOpen ? <HiX /> : <HiMenu />}
