@@ -29,25 +29,27 @@ const StackedBarChart = () => {
 
   return (
     <div className="bg-slate-100 text-slate-700 p-6 rounded-xl w-full">
-      <BarChart
-        width={700}
-        height={500}
-        data={chartData}
-        margin={{
-          top: 24,
-          right: 24,
-          left: 12,
-          bottom: 12,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="month" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="visitors" stackId="a" fill="#FF0F6F" />
-        <Bar dataKey="pageViews" stackId="a" fill="#007FFF" />
-      </BarChart>
+      <ResponsiveContainer width={"99%"} height={500}>
+        <BarChart
+          width={700}
+          height={500}
+          data={chartData}
+          margin={{
+            top: 24,
+            right: 24,
+            left: 12,
+            bottom: 12,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="month" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="visitors" stackId="a" fill="#FF0F6F" />
+          <Bar dataKey="pageViews" stackId="a" fill="#007FFF" />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

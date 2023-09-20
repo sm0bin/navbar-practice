@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import {
   LineChart,
   Line,
@@ -7,6 +7,7 @@ import {
   Legend,
   Tooltip,
   CartesianGrid,
+  ResponsiveContainer,
 } from "recharts";
 
 const SimpleLineChart = () => {
@@ -27,25 +28,27 @@ const SimpleLineChart = () => {
 
   return (
     <div className="bg-slate-100  text-slate-700 p-6 rounded-xl w-full">
-      <LineChart
-        width={700}
-        height={500}
-        data={chartData}
-        margin={{
-          top: 24,
-          right: 24,
-          left: 12,
-          bottom: 12,
-        }}
-      >
-        <Line type="monotone" dataKey="visitors" stroke="red" />
-        <Line type="monotone" dataKey="pageViews" stroke="blue" />
-        <XAxis dataKey="month" stroke="green"></XAxis>
-        <YAxis stroke="green"></YAxis>
-        <Legend></Legend>
-        <Tooltip></Tooltip>
-        <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
-      </LineChart>
+      <ResponsiveContainer width={"99%"} height={500}>
+        <LineChart
+          width={700}
+          height={500}
+          data={chartData}
+          margin={{
+            top: 24,
+            right: 24,
+            left: 12,
+            bottom: 12,
+          }}
+        >
+          <Line type="monotone" dataKey="visitors" stroke="red" />
+          <Line type="monotone" dataKey="pageViews" stroke="blue" />
+          <XAxis dataKey="month" stroke="green"></XAxis>
+          <YAxis stroke="green"></YAxis>
+          <Legend></Legend>
+          <Tooltip></Tooltip>
+          <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };
