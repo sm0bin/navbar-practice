@@ -1,9 +1,8 @@
-import Nav from "./Nav";
-import Header from "./Header";
-import ServicePlans from "./ServicePlans";
+import Header from "./components/Header";
+import ServicePlans from "./components/ServicePlans";
 import "./App.css";
-import Charts from "./Charts";
-import Headline from "./Headline";
+import Charts from "./components/Charts";
+import Headline from "./components/Headline";
 
 const App = () => {
   return (
