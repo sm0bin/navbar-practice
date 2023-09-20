@@ -1,15 +1,17 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
+  Cell,
   XAxis,
   YAxis,
-  Legend,
-  Tooltip,
   CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
 } from "recharts";
 
-const SimpleLineChart = () => {
+const StackedBarChart = () => {
   const chartData = [
     { month: "Jan", visitors: 2500, pageViews: 8000 },
     { month: "Feb", visitors: 2800, pageViews: 8500 },
@@ -26,8 +28,8 @@ const SimpleLineChart = () => {
   ];
 
   return (
-    <div className="bg-slate-100  text-slate-700 p-6 rounded-xl w-full">
-      <LineChart
+    <div className="bg-slate-100 text-slate-700 p-6 rounded-xl w-full">
+      <BarChart
         width={700}
         height={500}
         data={chartData}
@@ -38,16 +40,16 @@ const SimpleLineChart = () => {
           bottom: 12,
         }}
       >
-        <Line type="monotone" dataKey="visitors" stroke="red" />
-        <Line type="monotone" dataKey="pageViews" stroke="blue" />
-        <XAxis dataKey="month" stroke="green"></XAxis>
-        <YAxis stroke="green"></YAxis>
-        <Legend></Legend>
-        <Tooltip></Tooltip>
-        <CartesianGrid strokeDasharray="3 3"></CartesianGrid>
-      </LineChart>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="month" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="visitors" stackId="a" fill="#FF0F6F" />
+        <Bar dataKey="pageViews" stackId="a" fill="#007FFF" />
+      </BarChart>
     </div>
   );
 };
 
-export default SimpleLineChart;
+export default StackedBarChart;

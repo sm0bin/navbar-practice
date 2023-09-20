@@ -13,7 +13,7 @@ const Header = () => {
   ];
 
   return (
-    <nav className="flex justify-between items-center max-w-screen-2xl mx-6 md:mx-10 2xl:mx-auto py-4 mb-32">
+    <nav className="flex justify-between items-center max-w-screen-2xl mx-6 md:mx-10 2xl:mx-auto py-4 mb-8">
       <a href="" className="font-bold text-3xl">
         TechHub
       </a>
